@@ -1,5 +1,6 @@
 # 長生採藥 Snake Game (SwiftUI)
-<img width="2032" height="2012" alt="image" src="https://github.com/user-attachments/assets/475d5acd-7044-4919-839d-b563ac255ab0" />
+
+![Baizhu 下午5 18 47](https://github.com/user-attachments/assets/16b410b6-7c57-40a9-babe-7cd101eece80)
 
 一款以 SwiftUI 製作的經典貪食蛇變體遊戲。玩家扮演「長生」，穿梭於棋盤收集不同顏色的藥材，身體顏色會隨著收集比例逐步變化。提供兩種模式：
 - 普通版「採集藥材」：越收集，身體越繽紛。
@@ -29,12 +30,17 @@
 ## 畫面一覽
 
 - 主選單：選擇難度，右下角可開啟「遊戲簡介」與「歷史紀錄」。
-- 遊戲畫面：上方顯示分數與最高分，中段為棋盤，底部顯示收集統計與操作按鈕。
-- 覆蓋層：倒數、暫停、結束畫面。
+<img width="352" height="702" alt="截圖 2025-09-24 下午6 37 59" src="https://github.com/user-attachments/assets/5751227b-3ce5-4e43-bb17-4ec529574045" />
+<img width="365" height="706" alt="截圖 2025-09-24 下午6 38 16" src="https://github.com/user-attachments/assets/4af6d7e2-a6d2-4a12-80f5-883e9de374e4" />
+<img width="342" height="698" alt="截圖 2025-09-24 下午6 38 24" src="https://github.com/user-attachments/assets/2b738384-2ba7-45d0-8140-61f75f2ff3bc" />
 
-<img width="1206" height="2622" alt="image" src="https://github.com/user-attachments/assets/e510d90f-7687-4ca3-a40d-ec7cb947e708" />
-<img width="1206" height="2622" alt="image" src="https://github.com/user-attachments/assets/d29d4dfc-2292-4c93-aa80-e49012754bfe" />
-<img width="1206" height="2622" alt="image" src="https://github.com/user-attachments/assets/21590325-f608-493f-8472-5ad6b341fa5c" />
+- 遊戲畫面：上方顯示分數與最高分，中段為棋盤，底部顯示收集統計與操作按鈕。
+<img width="362" height="702" alt="截圖 2025-09-24 下午6 35 30" src="https://github.com/user-attachments/assets/b667353a-275a-4478-8fc3-51e40c724dcb" />
+
+- 覆蓋層：倒數、暫停、結束畫面。
+<img width="368" height="708" alt="截圖 2025-09-24 下午6 38 31" src="https://github.com/user-attachments/assets/84408049-6099-480e-8725-93ece93842d0" />
+<img width="349" height="700" alt="截圖 2025-09-24 下午6 38 47" src="https://github.com/user-attachments/assets/3d76aedf-8eae-4286-accf-34f96898ba0f" />
+<img width="354" height="705" alt="截圖 2025-09-24 下午6 38 56" src="https://github.com/user-attachments/assets/2c25bec1-3e34-4cf7-b3cd-cf5fa1639dcb" />
 
 ## 專案結構（節錄）
 
@@ -53,15 +59,32 @@
    - Xcode 15 或以上
    - iOS 17（或對應的 SwiftUI 版本；如需更低版本請自行調整 API）
 2. 取得專案
-   - 將本專案 clone 或下載到本機後，使用 Xcode 開啟 .xcodeproj / .xcworkspace。
+   - 將本專案 clone 或下載到本機後，使用 Xcode 開啟 .xcodeproj。
 3. 資源配置
    - 字型：請確認已將「ChenYuluoyan-2.0-Thin」加入專案並在 Info.plist 的 Fonts provided by application 中註冊。
    - 圖片資源：請確認以下影像已加入 Asset Catalog，名稱需一致：
      - "Image 7", "Image 5", "Image 6", "Image 8", "Image 9",
        "Image 3", "Image 1", "Image 2", "Image 12", "Image 10", "Image 11", "Image", "Image 13", "Image 14"
-   - 音樂資源：Bundle 內需有 music1.mp3（主選單）、music2.mp3（普通版）、music3.mp3（進階版）。
+   - 音樂資源：
+     - 專案目前不隨倉庫附帶 mp3（避免超過 GitHub 100MB 限制）。請參考下方「音樂來源與加入方式」自行加入檔案。
 4. 執行
    - 在 Xcode 中選擇目標裝置（模擬器或真機），按下 Run 即可。
+
+## 音樂來源與加入方式
+- 本專案預期的檔名：
+  - 主選單：music1.mp3
+  - 普通版：music2.mp3
+  - 進階版：music3.mp3
+
+- 音樂來源（YouTube）：
+  - 主選單 BGM（music1.mp3）：https://youtu.be/-zGkld42Hdg?si=wPE7Qk2NdZHX-sPt
+  - 普通版 BGM（music2.mp3）：https://youtu.be/QFMVNoRHVhI?si=C8FXS_VjcsqnE3an
+  - 進階版 BGM（music3.mp3）：https://youtu.be/l2qHL3e7uuI?si=8r6PD7Y2iEeJ_89C
+
+- 加入方式：
+  1) 下載音源並轉成 mp3（建議 192kbps 或 256kbps，檔案保持在 100MB 以下）。
+  2) 將檔案以上述檔名放入專案的根目錄資料夾（或直接拖曳進 Xcode 的專案樹）。
+  3) 勾選「Copy items if needed」並加入目標 Target，確保檔案會被打包進 app bundle。
 
 ## 遊戲玩法
 
@@ -82,9 +105,8 @@
 
 ## 技術重點
 
-- 純 SwiftUI 介面與互動（含 Canvas 畫格線）。
+- 純 SwiftUI 介面與互動。
 - Timer 與 RunLoop（.common）驅動遊戲節奏。
-- 幾何排版：以 GeometryReader 計算棋盤大小與置中策略。
 - 狀態管理：
   - @State：遊戲狀態（蛇、食物、分數、暫停、倒數）。
   - @AppStorage：最高分持久化。
@@ -92,34 +114,20 @@
   - Color 的 RGB 通道解析（支援 UIKit/AppKit）。
   - 依食物顏色調整蛇身色彩（普通/進階有不同策略）。
 - 音效系統：
-  - AVAudioPlayer + CADisplayLink 實作 BGM 淡入/淡出。
+  - AVAudioPlayer + 定時器實作 BGM 淡入/淡出。
   - 依場景切換音樂（主選單/不同難度）。
 
-## 客製化
-
-- 棋盤尺寸：Difficulty.rows / cols。
-- 速度與加速：Difficulty.initialTick / accelerationEvery / accelerationDelta / minTick。
-- 食物壽命與閃爍：SnakeGameView 中的 foodLifetimeTotal / foodFlashWindow / foodFlashFrequency（目前以常數使用）。
-- 棋盤定位：BoardOriginMode（預設 topCentered(topPadding: 20)）。
-
-## 已知注意事項
+## 已知事項
 
 - 請確保所有圖片/字型/音樂資源名稱與專案程式一致。
 - 若要支援更低的 iOS 版本，可能需調整部分 SwiftUI API 或可用性檢查。
-- 計時器使用 Timer + RunLoop，若要高度精準的遊戲節奏，可考慮以 CADisplayLink 或 Swift Concurrency 重構（但目前邏輯已穩定）。
+- 若未加入 mp3，遊戲可正常運作但不會播放 BGM。
 
 ## 未來規劃
 
-- 增加歷史記錄（藥材比例呈現的顏色 。
+- 增加歷史記錄（例如顯示藥材比例對應的顏色）。
 - 增加更多道具（加速/減速/護盾等）。
 - 關卡或地形變化（障礙物/傳送門）。
 - 排行榜（Game Center）。
 - 觸覺回饋與音效效果（吃到食物、撞擊等）。
 - 無障礙與在地化內容強化。
-
-
-## 致謝
-
-- SwiftUI 與 Apple 開發者社群。
-- 字型「ChenYuluoyan-2.0-Thin」提供者。
-- 所有測試與提供回饋的朋友們。
